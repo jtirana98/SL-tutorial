@@ -36,16 +36,16 @@ def execute_partition_and_plot(partion_args):
         },
     )
 
-    fig, axes, df_list = plot_label_distributions(
-        partitioner=fds.partitioners["train"],
-        label_name=partion_args['partition_target'],
-        title=f"{partion_args['dataset_name']} - {partion_args['partition_method']} - {partion_args['partition_target']}",
-        legend=True,
-        verbose_labels=True,
-    )
-    #plt.show()
-    plt.savefig('distribution.png')
-    print(df_list)
+    # fig, axes, df_list = plot_label_distributions(
+    #     partitioner=fds.partitioners["train"],
+    #     label_name=partion_args['partition_target'],
+    #     title=f"{partion_args['dataset_name']} - {partion_args['partition_method']} - {partion_args['partition_target']}",
+    #     legend=True,
+    #     verbose_labels=True,
+    # )
+    # #plt.show()
+    # plt.savefig('distribution.png')
+    # print(df_list)
 
 
     def apply_transforms_train_mnist(batch):
@@ -78,6 +78,8 @@ def execute_partition_and_plot(partion_args):
     for partition_id in range(partion_args['num_clients']):
         
         partition = fds.load_partition(partition_id, "train")
+        partition = partition.train_test_split(train_size=0.8, seed=42)
+        
         partition["train"] = partition["train"].with_transform(apply_transforms_train_mnist)
         partition["test"] = partition["test"].with_transform(apply_transforms_test_mnist)
         
@@ -88,7 +90,7 @@ def execute_partition_and_plot(partion_args):
 
     testset = fds.load_split("test").with_transform(apply_transforms_test_mnist)    
     testloader = DataLoader(testset, batch_size=64)
-    return trainloaders, valloaders, testloader, df_list
+    return trainloaders, valloaders, testloader, []
 
 
 def generate_partitioner(partion_args):
