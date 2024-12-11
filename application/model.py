@@ -1,3 +1,7 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
 class SimpleCNNMNIST(nn.Module):
     def __init__(self, input_dim, hidden_dims, output_dim=10, first_cut=-1, last_cut=-1):
         super(SimpleCNNMNIST, self).__init__()
