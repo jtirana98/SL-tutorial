@@ -1,0 +1,11 @@
+my repos:
+
+- https://github.com/jtirana98/decFLwithSL : old implementation, but it contains an example on networking
+- https://github.com/jtirana98/NIID-Bench-adhocSL : it extends the NIID-Bench library from the flower, that contains the training of several distributed learning frameworks and different types of non-iid
+- https://github.com/jtirana98/MultiHop-Federeated-Split-Learning : implementation of parallel Split Learning with LibTorch, i.e., C++
+
+Other repos:
+
+- https://github.com/Minki-Kim95/Federated-Learning-and-Split-Learning-with-raspberry-pi 
+- https://github.com/ymliao98/MergeSFL 
+- https://github.com/mlpotter/SplitLearning (implementation of SplitFed paper)
