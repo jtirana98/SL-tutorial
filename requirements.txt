@@ -1,3 +1,12 @@
 pytorch library: https://pytorch.org/
 numpy
-flower library for data: https://pypi.org/project/flower/ 
+flower library for data: https://pypi.org/project/flower/ or python -m pip install flwr-datasets==0.2.0
+
+pip install -U pillow
+pip install bokeh
+conda install anaconda::scikit-learn
+
+
+if you get error for floats:
+np.float_ = np.float64
+before importing flower
