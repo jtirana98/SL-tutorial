@@ -1,0 +1,3 @@
+pytorch library: https://pytorch.org/
+numpy
+flower library for data: https://pypi.org/project/flower/ 

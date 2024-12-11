@@ -10,7 +10,7 @@ Files with code
             - /application/client.py: client side, note that this could be a standalone thread/process
 
 Files with notes:
-    - requirements.txt: important libraries
+    - requirements.txt: important libraries with links
     - set_up_rpi.txt: notes on how to set-up RPI
     - set_up_jtson.txt: notes on how to set-up Jtson
     - git_list.txt: list of github repos
